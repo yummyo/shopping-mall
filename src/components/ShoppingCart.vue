@@ -23,10 +23,10 @@
         <div class="car-btn-group">
           <div></div>
           <div class="car-btn-row">
-            <router-link to="/goodsDetail">
+            <router-link gto="/goodsDetail" to="/">
               <button class="btn-car btn-car-to-detail">查看商品详情</button>
             </router-link>
-            <router-link to="/order">
+            <router-link gto="/order" to="/">
               <button class="btn-car btn-car-to-pay">去购物车结算 > </button>
             </router-link>
           </div>
@@ -52,7 +52,7 @@
               <p>￥{{item.price}}</p>
             </div>
             <div class="other-buy-btn-box">
-              <router-link to="/goodsDetail">
+              <router-link gto="/goodsDetail" to="/">
                 <button class="other-buy-btn"><Icon type="ios-cart"></Icon> 加入购物车</button>
               </router-link>
             </div>

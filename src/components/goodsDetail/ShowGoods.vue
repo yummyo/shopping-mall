@@ -159,7 +159,7 @@ export default {
         package: this.goodsInfo.setMeal[index1][index2]
       }
       this.addShoppingCart(data)
-      this.$router.push('/shoppingCart')
+      // this.$router.push('/shoppingCart')
     }
   },
   mounted() {

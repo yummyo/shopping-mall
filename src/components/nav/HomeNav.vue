@@ -84,7 +84,7 @@
         <div>
           <Carousel autoplay loop>
               <CarouselItem  v-for="(item, index) in marketing.CarouselItems" :key="index">
-                <router-link to="/goodsList">
+                <router-link gto="/goodsList" to="/">
                   <img :src="item">
                 </router-link>
               </CarouselItem>
@@ -92,7 +92,7 @@
         </div>
         <div class="nav-show">
           <div class="nav-show-img" v-for="(item, index) in marketing.activity" :key="index">
-            <router-link to="/goodsList">
+            <router-link gto="/goodsList" to="/">
               <img :src="item">
             </router-link>
           </div>
@@ -109,7 +109,7 @@
             <span class="detail-item-title">{{items.title}}
               <span class="glyphicon glyphicon-menu-right"></span>
             </span>
-            <router-link to="/goodsList" v-for="(item, subIndex) in items.tags" :key="subIndex">
+            <router-link gto="/goodsList" to="/" v-for="(item, subIndex) in items.tags" :key="subIndex">
               <span class="detail-item">{{item}}</span>
             </router-link>
           </li>
@@ -126,7 +126,7 @@
             <span class="detail-item-title">{{items.title}}
               <span class="glyphicon glyphicon-menu-right"></span>
             </span>
-            <router-link to="/goodsList" v-for="(item, subIndex) in items.tags" :key="subIndex">
+            <router-link gto="/goodsList" to="/" v-for="(item, subIndex) in items.tags" :key="subIndex">
               <span class="detail-item">{{item}}</span>
             </router-link>
           </li>

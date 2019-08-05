@@ -6,8 +6,8 @@
     <div class="shop-item-path">
       <div class="shop-nav-container">
         <Breadcrumb>
-          <BreadcrumbItem to="/">首页</BreadcrumbItem>
-          <BreadcrumbItem to="/goodsList">手机壳</BreadcrumbItem>
+          <BreadcrumbItem gto="/" to="/">首页</BreadcrumbItem>
+          <BreadcrumbItem gto="/goodsList" to="/">手机壳</BreadcrumbItem>
           <BreadcrumbItem>手机保护套</BreadcrumbItem>
         </Breadcrumb>
       </div>

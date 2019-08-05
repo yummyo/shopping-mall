@@ -4,15 +4,15 @@
       <div class="search-nav-container">
         <ul>
           <li>全部商品分类</li>
-          <li><router-link to="/">首页</router-link></li>
-          <li><router-link to="/">服装城</router-link></li>
-          <li><router-link to="/">美妆馆</router-link></li>
-          <li><router-link to="/">BIT超市</router-link></li>
-          <li><router-link to="/">生鲜</router-link></li>
-          <li><router-link to="/">全球购</router-link></li>
-          <li><router-link to="/">闪购</router-link></li>
-          <li><router-link to="/">拍卖</router-link></li>
-          <li><router-link to="/">金融</router-link></li>
+          <li><router-link gto="/" to="/">首页</router-link></li>
+          <li><router-link gto="/" to="/">服装城</router-link></li>
+          <li><router-link gto="/" to="/">美妆馆</router-link></li>
+          <li><router-link gto="/" to="/">BIT超市</router-link></li>
+          <li><router-link gto="/" to="/">生鲜</router-link></li>
+          <li><router-link gto="/" to="/">全球购</router-link></li>
+          <li><router-link gto="/" to="/">闪购</router-link></li>
+          <li><router-link gto="/" to="/">拍卖</router-link></li>
+          <li><router-link gto="/" to="/">金融</router-link></li>
         </ul>
       </div>
     </div>

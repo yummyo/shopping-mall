@@ -26,12 +26,12 @@
       <ul class="detail">
         <li class="first" v-show="!userInfo.username">
           你好，请
-          <router-link to="/login">
+          <router-link gto="/login" to="/">
             登录
             <Icon type="person"></Icon>
           </router-link>|
           <span class="text-color-red">
-            <router-link to="/SignUp">
+            <router-link gto="/SignUp" to="/">
               免费注册
               <Icon type="person-add"></Icon>
             </router-link>
@@ -97,13 +97,13 @@
           </Dropdown>
         </li>
         <li>
-          <router-link to="/">网站导航</router-link>
+          <router-link gto="/" to="/">网站导航</router-link>
         </li>
         <li>
-          <router-link to="/freeback">意见反馈</router-link>
+          <router-link gto="/freeback" to="/">意见反馈</router-link>
         </li>
         <li>
-          <router-link to="/">商城首页</router-link>
+          <router-link gto="/" to="/">商城首页</router-link>
         </li>
       </ul>
     </div>
@@ -138,14 +138,14 @@ export default {
       this.city = city
     },
     goToPay() {
-      this.$router.push('/order')
+      // this.$router.push('/order')
     },
     myInfo() {
-      this.$router.push('/home')
+      // this.$router.push('/home')
     },
     signOutFun() {
       this.signOut()
-      this.$router.push('/')
+      // this.$router.push('/')
     }
   },
   store

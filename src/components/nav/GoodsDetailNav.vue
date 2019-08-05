@@ -3,7 +3,7 @@
     <div class="shop-nav-container">
       <ul>
         <li v-for="(item, index) in shopNav" :key="index">
-          <router-link to="/merchant">{{item}}</router-link>
+          <router-link gto="/merchant" to="/">{{item}}</router-link>
         </li>
       </ul>
     </div>

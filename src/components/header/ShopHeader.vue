@@ -7,8 +7,8 @@
           <i class="fa fa-fire"></i>
         </div>
         <div class="shop-title-content">
-          <p><router-link to="/merchant">{{ shopIntro.shopName }}</router-link></p>
-          <p><router-link to="/merchant">{{ shopIntro.slogen }}</router-link></p>
+          <p><router-link gto="/merchant" to="/">{{ shopIntro.shopName }}</router-link></p>
+          <p><router-link gto="/merchant" to="/">{{ shopIntro.slogen }}</router-link></p>
         </div>
       </div>
       <div class="shop-another-item">

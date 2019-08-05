@@ -70,7 +70,7 @@ export default {
   methods: {
     ...mapActions(['loadShoppingCart']),
     goTo() {
-      this.$router.push('/order')
+      // this.$router.push('/order')
     }
   },
   store

@@ -5,10 +5,10 @@
     <div class="container">
       <div class="bread-crumb">
         <Breadcrumb>
-          <BreadcrumbItem to="/">
+          <BreadcrumbItem gto="/" to="/">
             <Icon type="ios-home-outline"></Icon> 首页
           </BreadcrumbItem>
-          <BreadcrumbItem to="/goodsList?sreachData=">
+          <BreadcrumbItem gto="/goodsList?sreachData=" to="/">
             <Icon type="bag"></Icon> {{searchItem}}
           </BreadcrumbItem>
         </Breadcrumb>
@@ -49,7 +49,7 @@
           <div class="goods-list">
             <div class="goods-show-info" v-for="(item, index) in orderGoodsList" :key="index">
               <div class="goods-show-img">
-                <router-link to="/goodsDetail"><img :src="item.img"/></router-link>
+                <router-link gto="/goodsDetail" to="/"><img :src="item.img"/></router-link>
               </div>
               <div class="goods-show-price">
                 <span>
