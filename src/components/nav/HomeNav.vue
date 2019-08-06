@@ -10,6 +10,7 @@
     <div class="nav-body">
       <!-- 侧边导航 -->
       <div class="nav-side" ref="navSide">
+        <div class="allClassify">全部分类</div>
         <ul>
           <li @mouseenter="showDetail(1)" @mouseleave="hideDetail(1)">
             <span class="nav-side-item">家用电器</span>
@@ -83,33 +84,46 @@
         <!-- 幻灯片 -->
         <div>
           <Carousel autoplay loop>
-              <CarouselItem  v-for="(item, index) in marketing.CarouselItems" :key="index">
-                <router-link gto="/goodsList" to="/">
-                  <img :src="item">
-                </router-link>
-              </CarouselItem>
+            <CarouselItem v-for="(item, index) in marketing.CarouselItems" :key="index">
+              <router-link gto="/goodsList" to="/">
+                <img :src="item" />
+              </router-link>
+            </CarouselItem>
           </Carousel>
         </div>
         <div class="nav-show">
           <div class="nav-show-img" v-for="(item, index) in marketing.activity" :key="index">
             <router-link gto="/goodsList" to="/">
-              <img :src="item">
+              <img :src="item" />
             </router-link>
           </div>
         </div>
       </div>
     </div>
     <transition name="fade">
-      <div class="detail-item-panel panel-1" :duration="{ enter: 100, leave: 100 }" v-show="panel1" @mouseenter="showDetail(1)" ref="itemPanel1" @mouseleave="hideDetail(1)">
+      <div
+        class="detail-item-panel panel-1"
+        :duration="{ enter: 100, leave: 100 }"
+        v-show="panel1"
+        @mouseenter="showDetail(1)"
+        ref="itemPanel1"
+        @mouseleave="hideDetail(1)"
+      >
         <div class="nav-detail-item">
-          <span v-for="(item, index) in panelData1.navTags" :key="index">{{item}} > </span>
+          <span v-for="(item, index) in panelData1.navTags" :key="index">{{item}} ></span>
         </div>
         <ul>
           <li v-for="(items, index) in panelData1.classNav" :key="index" class="detail-item-row">
-            <span class="detail-item-title">{{items.title}}
+            <span class="detail-item-title">
+              {{items.title}}
               <span class="glyphicon glyphicon-menu-right"></span>
             </span>
-            <router-link gto="/goodsList" to="/" v-for="(item, subIndex) in items.tags" :key="subIndex">
+            <router-link
+              gto="/goodsList"
+              to="/"
+              v-for="(item, subIndex) in items.tags"
+              :key="subIndex"
+            >
               <span class="detail-item">{{item}}</span>
             </router-link>
           </li>
@@ -117,16 +131,29 @@
       </div>
     </transition>
     <transition name="fade">
-      <div class="detail-item-panel panel-2" :duration="{ enter: 100, leave: 100 }" v-show="panel2" @mouseenter="showDetail(2)" ref="itemPanel2" @mouseleave="hideDetail(2)">
+      <div
+        class="detail-item-panel panel-2"
+        :duration="{ enter: 100, leave: 100 }"
+        v-show="panel2"
+        @mouseenter="showDetail(2)"
+        ref="itemPanel2"
+        @mouseleave="hideDetail(2)"
+      >
         <div class="nav-detail-item">
-          <span v-for="(item, index) in panelData2.navTags" :key="index">{{item}} > </span>
+          <span v-for="(item, index) in panelData2.navTags" :key="index">{{item}} ></span>
         </div>
         <ul>
           <li v-for="(items, index) in panelData2.classNav" :key="index" class="detail-item-row">
-            <span class="detail-item-title">{{items.title}}
+            <span class="detail-item-title">
+              {{items.title}}
               <span class="glyphicon glyphicon-menu-right"></span>
             </span>
-            <router-link gto="/goodsList" to="/" v-for="(item, subIndex) in items.tags" :key="subIndex">
+            <router-link
+              gto="/goodsList"
+              to="/"
+              v-for="(item, subIndex) in items.tags"
+              :key="subIndex"
+            >
               <span class="detail-item">{{item}}</span>
             </router-link>
           </li>
@@ -157,11 +184,30 @@ export default {
         '金融'
       ],
       panelData1: {
-        navTags: ['清洁用品', '美妆商城', '美妆馆', '妆比社', '全球购美妆', '宠物馆'],
+        navTags: [
+          '清洁用品',
+          '美妆商城',
+          '美妆馆',
+          '妆比社',
+          '全球购美妆',
+          '宠物馆'
+        ],
         classNav: [
           {
             title: '面部护肤',
-            tags: ['补水保湿', '卸妆', '洁面', '爽肤水', '乳液面霜', '精华', '眼霜', '防晒', '面膜', '剃须', '套装']
+            tags: [
+              '补水保湿',
+              '卸妆',
+              '洁面',
+              '爽肤水',
+              '乳液面霜',
+              '精华',
+              '眼霜',
+              '防晒',
+              '面膜',
+              '剃须',
+              '套装'
+            ]
           },
           {
             title: '洗发护发',
@@ -169,7 +215,17 @@ export default {
           },
           {
             title: '身体护理',
-            tags: ['补水保湿', '沐浴', '润肤', '精油', '颈部', '手足', '纤体塑形', '美胸', '套装']
+            tags: [
+              '补水保湿',
+              '沐浴',
+              '润肤',
+              '精油',
+              '颈部',
+              '手足',
+              '纤体塑形',
+              '美胸',
+              '套装'
+            ]
           },
           {
             title: '口腔护理',
@@ -181,27 +237,85 @@ export default {
           },
           {
             title: '香水彩妆',
-            tags: ['BB霜', '化妆棉', '女士香水', '男士香水', '底妆', '眉笔', '睫毛膏', '眼线', '眼影', '唇膏/彩']
+            tags: [
+              'BB霜',
+              '化妆棉',
+              '女士香水',
+              '男士香水',
+              '底妆',
+              '眉笔',
+              '睫毛膏',
+              '眼线',
+              '眼影',
+              '唇膏/彩'
+            ]
           },
           {
             title: '清洁用品',
-            tags: ['纸品湿巾', '衣物清洁', '清洁工具', '家庭清洁', '一次性用品', '驱虫用品', '皮具护理']
+            tags: [
+              '纸品湿巾',
+              '衣物清洁',
+              '清洁工具',
+              '家庭清洁',
+              '一次性用品',
+              '驱虫用品',
+              '皮具护理'
+            ]
           },
           {
             title: '宠物生活',
-            tags: ['水族世界', '狗粮', '猫粮', '猫狗罐头', '狗零食', '猫零食', '医疗保健', '宠物玩具', '宠物服饰']
+            tags: [
+              '水族世界',
+              '狗粮',
+              '猫粮',
+              '猫狗罐头',
+              '狗零食',
+              '猫零食',
+              '医疗保健',
+              '宠物玩具',
+              '宠物服饰'
+            ]
           },
           {
             title: '香水彩妆',
-            tags: ['BB霜', '化妆棉', '女士香水', '男士香水', '底妆', '眉笔', '睫毛膏', '眼线', '眼影', '唇膏/彩']
+            tags: [
+              'BB霜',
+              '化妆棉',
+              '女士香水',
+              '男士香水',
+              '底妆',
+              '眉笔',
+              '睫毛膏',
+              '眼线',
+              '眼影',
+              '唇膏/彩'
+            ]
           },
           {
             title: '清洁用品',
-            tags: ['纸品湿巾', '衣物清洁', '清洁工具', '家庭清洁', '一次性用品', '驱虫用品', '皮具护理']
+            tags: [
+              '纸品湿巾',
+              '衣物清洁',
+              '清洁工具',
+              '家庭清洁',
+              '一次性用品',
+              '驱虫用品',
+              '皮具护理'
+            ]
           },
           {
             title: '宠物生活',
-            tags: ['水族世界', '狗粮', '猫粮', '猫狗罐头', '狗零食', '猫零食', '医疗保健', '宠物玩具', '宠物服饰']
+            tags: [
+              '水族世界',
+              '狗粮',
+              '猫粮',
+              '猫狗罐头',
+              '狗零食',
+              '猫零食',
+              '医疗保健',
+              '宠物玩具',
+              '宠物服饰'
+            ]
           }
         ]
       },
@@ -210,47 +324,151 @@ export default {
         classNav: [
           {
             title: '2017新品',
-            tags: ['休闲鞋', '商务休闲鞋', '正装鞋', '帆布鞋', '凉鞋', '拖鞋', '功能鞋', '增高鞋', '工装鞋', '雨鞋']
+            tags: [
+              '休闲鞋',
+              '商务休闲鞋',
+              '正装鞋',
+              '帆布鞋',
+              '凉鞋',
+              '拖鞋',
+              '功能鞋',
+              '增高鞋',
+              '工装鞋',
+              '雨鞋'
+            ]
           },
           {
             title: '运动鞋包',
-            tags: ['跑步鞋', '休闲鞋', '篮球鞋', '帆布鞋', '板鞋', '拖鞋', '运动包']
+            tags: [
+              '跑步鞋',
+              '休闲鞋',
+              '篮球鞋',
+              '帆布鞋',
+              '板鞋',
+              '拖鞋',
+              '运动包'
+            ]
           },
           {
             title: '健身训练',
-            tags: ['跑步机', '健身车/动感单车', '椭圆机', '综合训练器', '划船机', '甩脂机', '倒立机', '武术搏击']
+            tags: [
+              '跑步机',
+              '健身车/动感单车',
+              '椭圆机',
+              '综合训练器',
+              '划船机',
+              '甩脂机',
+              '倒立机',
+              '武术搏击'
+            ]
           },
           {
             title: '骑行运动',
-            tags: ['山地车', '公路车', '折叠车', '骑行服', '电动车', '电动滑板车', '城市自行车', '平衡车']
+            tags: [
+              '山地车',
+              '公路车',
+              '折叠车',
+              '骑行服',
+              '电动车',
+              '电动滑板车',
+              '城市自行车',
+              '平衡车'
+            ]
           },
           {
             title: '体育用品',
-            tags: ['乒乓球', '羽毛球', '篮球', '足球', '轮滑滑板', '网球', '高尔夫', '台球', '排球']
+            tags: [
+              '乒乓球',
+              '羽毛球',
+              '篮球',
+              '足球',
+              '轮滑滑板',
+              '网球',
+              '高尔夫',
+              '台球',
+              '排球'
+            ]
           },
           {
             title: '户外鞋服',
-            tags: ['户外风衣', '徒步鞋', 'T恤', '冲锋衣裤', '速干衣裤', '越野跑鞋', '滑雪服', '羽绒服/棉服', '休闲衣裤']
+            tags: [
+              '户外风衣',
+              '徒步鞋',
+              'T恤',
+              '冲锋衣裤',
+              '速干衣裤',
+              '越野跑鞋',
+              '滑雪服',
+              '羽绒服/棉服',
+              '休闲衣裤'
+            ]
           },
           {
             title: '户外装备',
-            tags: ['背包', '帐篷/垫子', '望远镜', '烧烤用具', '便携桌椅床', '户外配饰', '军迷用品', '野餐用品']
+            tags: [
+              '背包',
+              '帐篷/垫子',
+              '望远镜',
+              '烧烤用具',
+              '便携桌椅床',
+              '户外配饰',
+              '军迷用品',
+              '野餐用品'
+            ]
           },
           {
             title: '垂钓用品',
-            tags: ['钓竿', '鱼线', '浮漂', '鱼饵', '钓鱼配件', '渔具包', '钓箱钓椅', '鱼线轮', '钓鱼灯']
+            tags: [
+              '钓竿',
+              '鱼线',
+              '浮漂',
+              '鱼饵',
+              '钓鱼配件',
+              '渔具包',
+              '钓箱钓椅',
+              '鱼线轮',
+              '钓鱼灯'
+            ]
           },
           {
             title: '游泳用品',
-            tags: ['女士泳衣', '比基尼', '男士泳衣', '泳镜', '游泳圈', '游泳包防水包', '泳帽', '游泳配件']
+            tags: [
+              '女士泳衣',
+              '比基尼',
+              '男士泳衣',
+              '泳镜',
+              '游泳圈',
+              '游泳包防水包',
+              '泳帽',
+              '游泳配件'
+            ]
           },
           {
             title: '垂钓用品',
-            tags: ['钓竿', '鱼线', '浮漂', '鱼饵', '钓鱼配件', '渔具包', '钓箱钓椅', '鱼线轮', '钓鱼灯']
+            tags: [
+              '钓竿',
+              '鱼线',
+              '浮漂',
+              '鱼饵',
+              '钓鱼配件',
+              '渔具包',
+              '钓箱钓椅',
+              '鱼线轮',
+              '钓鱼灯'
+            ]
           },
           {
             title: '游泳用品',
-            tags: ['女士泳衣', '比基尼', '男士泳衣', '泳镜', '游泳圈', '游泳包防水包', '泳帽', '游泳配件']
+            tags: [
+              '女士泳衣',
+              '比基尼',
+              '男士泳衣',
+              '泳镜',
+              '游泳圈',
+              '游泳包防水包',
+              '泳帽',
+              '游泳配件'
+            ]
           }
         ]
       }
@@ -288,9 +506,22 @@ export default {
 </script>
 
 <style scoped>
+.allClassify {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  text-align: center;
+  line-height: 36px;
+  font-size: 16px;
+  background: #c30d23;
+  color: #fff;
+}
 .nav-item {
   width: 680px;
   height: 36px;
+  line-height: 36px;
   margin: 0px auto;
 }
 .nav-item ul {
@@ -324,6 +555,7 @@ export default {
   color: #fff;
   float: left;
   background-color: #6e6568;
+  position: relative;
 }
 .nav-side ul {
   width: 100%;
@@ -412,7 +644,7 @@ export default {
 .detail-item-row a {
   color: #555555;
 }
-.detail-item{
+.detail-item {
   font-size: 14px;
   padding-left: 12px;
   padding-right: 8px;

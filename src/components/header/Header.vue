@@ -100,7 +100,13 @@
           <router-link gto="/" to="/">网站导航</router-link>
         </li>
         <li>
+          <router-link gto="/" to="/">我的收藏</router-link>
+        </li>
+        <li>
           <router-link gto="/freeback" to="/">意见反馈</router-link>
+        </li>
+        <li>
+          <router-link gto="/freeback" to="/">帮助中心</router-link>
         </li>
         <li>
           <router-link gto="/" to="/">商城首页</router-link>
