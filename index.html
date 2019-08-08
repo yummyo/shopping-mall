@@ -10,6 +10,25 @@
 <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        /* eslint-disable */
+        jQuery(function() {
+            console.log(window.location)
+            if (window.location.href.indexOf('getWidth') > -1) {
+                jQuery('img').click(function() {
+                    alert("宽度:" + jQuery(this).width() + ";高度:" + jQuery(this).height() + ";")
+                })
+                // jQuery.each(jQuery('img'), function(i, v) {
+                //     alert("宽度:" + jQuery(v).width() + ";高度:" + jQuery(v).height() + ";")
+                // var _span = jQuery(`<div>宽:jQuery{jQuery(v).width()};高:jQuery{jQuery(v).height()};</div>`)
+                // jQuery(v)
+                //     .parent()
+                //     .append(_span)
+                // })
+            }
+        })
+    </script>
 </body>
 
 </html>

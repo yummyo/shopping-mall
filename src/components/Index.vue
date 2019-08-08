@@ -29,7 +29,7 @@
         <div class="seckill-content">
           <div class="seckill-item" v-for="(item, index) in seckills.goodsList" :key="index">
             <div class="seckill-item-img">
-              <router-link gto="/goodsList" to="/">
+              <router-link to="/goodsList" gto="/">
                 <img :src="item.img" />
               </router-link>
             </div>
@@ -54,14 +54,14 @@
           <span class="item-class-title">{{computer.title}}</span>
           <ul>
             <li v-for="(item, index) in computer.link" :key="index">
-              <router-link gto="/goodsList" to="/">{{item}}</router-link>
+              <router-link to="/goodsList" gto="/">{{item}}</router-link>
             </li>
           </ul>
         </div>
         <div class="item-class-content" v-for="(item, index) in computer.detail" :key="index">
           <div class="item-content-top">
             <div class="item-big-img">
-              <router-link gto="/goodsList" to="/">
+              <router-link to="/goodsList" gto="/">
                 <img :src="item.bigImg" alt />
               </router-link>
             </div>
@@ -72,7 +72,7 @@
                   <p class="pt_bi_promo">{{subItem.intro}}</p>
                 </div>
                 <div class="item-four-detail-img">
-                  <router-link gto="/goodsList" to="/">
+                  <router-link to="/goodsList" gto="/">
                     <img :src="subItem.img" alt />
                   </router-link>
                 </div>
@@ -85,7 +85,7 @@
               v-for="(subImg, index) in item.itemContent"
               :key="index"
             >
-              <router-link gto="/goodsList" to="/">
+              <router-link to="/goodsList" gto="/">
                 <img :src="subImg" />
               </router-link>
             </div>
@@ -98,7 +98,7 @@
           <span class="item-class-title">{{eat.title}}</span>
           <ul>
             <li v-for="(item, index) in eat.link" :key="index">
-              <router-link gto="/goodsList" to="/">{{item}}</router-link>
+              <router-link to="/goodsList" gto="/">{{item}}</router-link>
             </li>
           </ul>
         </div>
@@ -114,7 +114,7 @@
                   <p class="pt_bi_promo">{{subItem.intro}}</p>
                 </div>
                 <div class="item-four-detail-img">
-                  <router-link gto="/goodsList" to="/">
+                  <router-link to="/goodsList" gto="/">
                     <img :src="subItem.img" alt />
                   </router-link>
                 </div>
@@ -127,7 +127,7 @@
               v-for="(subImg, index) in item.itemContent"
               :key="index"
             >
-              <router-link gto="/goodsList" to="/">
+              <router-link to="/goodsList" gto="/">
                 <img :src="subImg" />
               </router-link>
             </div>
