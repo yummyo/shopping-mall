@@ -8,26 +8,29 @@
         <div class="add-info-detail">
           <div class="add-info-title">
             <p>
-              <i class="fa fa-check-circle"></i> 商品已成功加入购物车！</p>
+              <i class="fa fa-check-circle"></i> 商品已成功加入购物车！
+            </p>
           </div>
           <div class="add-info-box-row">
             <div class="add-info-img">
-              <img :src="newShoppingCart.package.img" alt="">
+              <img :src="newShoppingCart.package.img" alt />
             </div>
             <div class="add-info-intro">
               <p>{{newShoppingCart.title}} {{newShoppingCart.package.intro}}...</p>
-              <p class="add-info-intro-detail">颜色：{{newShoppingCart.package.intro}}/ 数量：{{newShoppingCart.count}}</p>
+              <p
+                class="add-info-intro-detail"
+              >颜色：{{newShoppingCart.package.intro}}/ 数量：{{newShoppingCart.count}}</p>
             </div>
           </div>
         </div>
         <div class="car-btn-group">
           <div></div>
           <div class="car-btn-row">
-            <router-link gto="/goodsDetail" to="/">
+            <router-link to="/goodsDetail">
               <button class="btn-car btn-car-to-detail">查看商品详情</button>
             </router-link>
-            <router-link gto="/order" to="/">
-              <button class="btn-car btn-car-to-pay">去购物车结算 > </button>
+            <router-link to="/order">
+              <button class="btn-car btn-car-to-pay">去购物车结算 ></button>
             </router-link>
           </div>
         </div>
@@ -40,7 +43,9 @@
       <div class="other-user-buy-row" v-for="(items,index1) in recommend" :key="index1">
         <div class="other-user-buy-item-box" v-for="(item,index2) in items" :key="index2">
           <div class="other-user-buy-item-img">
-            <a href="item_detail.html"><img :src="item.img" alt=""></a>
+            <a href="item_detail.html">
+              <img :src="item.img" alt />
+            </a>
           </div>
           <div class="other-buy-detail-box">
             <div class="other-buy-title">
@@ -52,8 +57,10 @@
               <p>￥{{item.price}}</p>
             </div>
             <div class="other-buy-btn-box">
-              <router-link gto="/goodsDetail" to="/">
-                <button class="other-buy-btn"><Icon type="ios-cart"></Icon> 加入购物车</button>
+              <router-link to="/goodsDetail">
+                <button class="other-buy-btn">
+                  <Icon type="ios-cart"></Icon>加入购物车
+                </button>
               </router-link>
             </div>
           </div>
@@ -93,135 +100,135 @@ export default {
 
 <style scoped>
 /****************************加入购物车页面开始*****************************/
-.add-info-box-container{
+.add-info-box-container {
   width: 100%;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
-.add-info-box{
+.add-info-box {
   width: 90%;
   margin: 0px auto;
   padding: 15px 0px;
   display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.add-info-detail{
+.add-info-detail {
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
 }
-.add-info-title{
+.add-info-title {
   font-size: 25px;
   color: #71b247;
 }
-.add-info-box-row{
+.add-info-box-row {
   display: flex;
-    flex-direction: row;
-    margin-top: 15px;
+  flex-direction: row;
+  margin-top: 15px;
 }
-.add-info-img{
+.add-info-img {
   width: 56px;
   height: 56px;
   margin-right: 15px;
 }
-.add-info-img img{
+.add-info-img img {
   width: 100%;
 }
-.add-info-intro{
+.add-info-intro {
   display: flex;
-    flex-direction: column;
-    justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
-.add-info-intro-detail{
+.add-info-intro-detail {
   font-size: 12px;
   color: #999999;
 }
-.car-btn-group{
+.car-btn-group {
   display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
 }
 /*按钮*/
-.btn-car{
+.btn-car {
   padding: 8px 10px;
   font-size: 16px;
   border-radius: 0px;
-  border:none;
+  border: none;
   margin-right: 15px;
 }
-.btn-car-to-detail{
+.btn-car-to-detail {
   background-color: #fff;
   color: #e4393c;
-  border:1px solid #fff;
+  border: 1px solid #fff;
 }
-.btn-car-to-detail:hover{
-border:1px solid #e4393c;
+.btn-car-to-detail:hover {
+  border: 1px solid #e4393c;
 }
-.btn-car-to-pay{
+.btn-car-to-pay {
   background-color: #e4393c;
   color: #fff;
-  border:1px solid #e4393c;
+  border: 1px solid #e4393c;
 }
-.btn-car-to-pay:hover{
+.btn-car-to-pay:hover {
   background-color: #c91623;
-  border:1px solid #c91623;
+  border: 1px solid #c91623;
 }
 /*其他用户购买*/
-.other-user-buy-box{
+.other-user-buy-box {
   width: 90%;
   margin: 0px auto;
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
 }
-.other-user-buy-title{
+.other-user-buy-title {
   margin-top: 25px;
   font-size: 14px;
   color: #666;
   font-weight: bold;
 }
-.other-user-buy-row{
+.other-user-buy-row {
   margin-top: 25px;
   display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.other-user-buy-item-box{
+.other-user-buy-item-box {
   display: flex;
-    flex-direction: row;
+  flex-direction: row;
 }
-.other-user-buy-item-img{
+.other-user-buy-item-img {
   width: 96px;
   height: 96px;
 }
-.other-user-buy-item-img img{
+.other-user-buy-item-img img {
   width: 100%;
 }
-.other-buy-detail-box{
+.other-buy-detail-box {
   width: 160px;
   margin-left: 15px;
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
 }
-.other-buy-title{
+.other-buy-title {
   font-size: 12px;
 }
-.other-buy-title a{
+.other-buy-title a {
   color: #2c2c2c;
   text-decoration: none;
 }
-.other-buy-price{
+.other-buy-price {
   font-size: 12px;
   font-weight: bold;
-  color: #E4393C;
+  color: #e4393c;
 }
-.other-buy-btn{
+.other-buy-btn {
   padding: 3px 10px;
-  color: #E4393C;
+  color: #e4393c;
   font-size: 12px;
-  border: 1px solid #E4393C;
+  border: 1px solid #e4393c;
   border-radius: 0px;
   background-color: #fff;
 }
-.other-buy-btn:hover{
+.other-buy-btn:hover {
   color: #c91623;
   border: 1px solid #c91623;
 }

@@ -26,12 +26,12 @@
       <ul class="detail">
         <li class="first" v-show="!userInfo.username">
           你好，请
-          <router-link gto="/login" to="/">
+          <router-link to="/login">
             登录
             <Icon type="person"></Icon>
           </router-link>|
           <span class="text-color-red">
-            <router-link gto="/SignUp" to="/">
+            <router-link to="/SignUp">
               免费注册
               <Icon type="person-add"></Icon>
             </router-link>
@@ -97,19 +97,19 @@
           </Dropdown>
         </li>
         <li>
-          <router-link gto="/" to="/">网站导航</router-link>
+          <router-link to="/">网站导航</router-link>
+        </li>
+        <!-- <li>
+          <router-link to="/">我的收藏</router-link>
+        </li>-->
+        <li>
+          <router-link to="/freeback">意见反馈</router-link>
         </li>
         <li>
-          <router-link gto="/" to="/">我的收藏</router-link>
+          <router-link to="/freeback">帮助中心</router-link>
         </li>
         <li>
-          <router-link gto="/freeback" to="/">意见反馈</router-link>
-        </li>
-        <li>
-          <router-link gto="/freeback" to="/">帮助中心</router-link>
-        </li>
-        <li>
-          <router-link gto="/" to="/">商城首页</router-link>
+          <router-link to="/">商城首页</router-link>
         </li>
       </ul>
     </div>
@@ -126,7 +126,7 @@ export default {
   },
   data() {
     return {
-      city: '珠海',
+      city: '上海',
       cityArr: [
         ['北京', '上海', '天津', '重庆', '广州'],
         ['深圳', '河南', '辽宁', '吉林', '江苏'],
@@ -144,14 +144,14 @@ export default {
       this.city = city
     },
     goToPay() {
-      // this.$router.push('/order')
+      this.$router.push('/order')
     },
     myInfo() {
-      // this.$router.push('/home')
+      this.$router.push('/home')
     },
     signOutFun() {
       this.signOut()
-      // this.$router.push('/')
+      this.$router.push('/')
     }
   },
   store

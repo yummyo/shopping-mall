@@ -3,18 +3,25 @@
     <div class="item-detail-show">
       <div class="item-detail-left">
         <div class="item-detail-big-img">
-          <img :src="goodsInfo.goodsImg[imgIndex]" alt="">
+          <img :src="goodsInfo.goodsImg[imgIndex]" alt />
         </div>
         <div class="item-detail-img-row">
-          <div class="item-detail-img-small" v-for="(item, index) in goodsInfo.goodsImg" :key="index" @mouseover="showBigImg(index)">
-            <img :src="item" alt="">
+          <div
+            class="item-detail-img-small"
+            v-for="(item, index) in goodsInfo.goodsImg"
+            :key="index"
+            @mouseover="showBigImg(index)"
+          >
+            <img :src="item" alt />
           </div>
         </div>
       </div>
       <div class="item-detail-right">
         <div class="item-detail-title">
           <p>
-            <span class="item-detail-express">校园配送</span> {{goodsInfo.title}}</p>
+            <span class="item-detail-express">校园配送</span>
+            {{goodsInfo.title}}
+          </p>
         </div>
         <div class="item-detail-tag">
           <p>
@@ -32,13 +39,21 @@
             <div class="item-price-row">
               <p>
                 <span class="item-price-title">优 惠 价</span>
-                <span class="item-price-full-cut" v-for="(item,index) in goodsInfo.discount" :key="index">{{item}}</span>
+                <span
+                  class="item-price-full-cut"
+                  v-for="(item,index) in goodsInfo.discount"
+                  :key="index"
+                >{{item}}</span>
               </p>
             </div>
             <div class="item-price-row">
               <p>
                 <span class="item-price-title">促&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销</span>
-                <span class="item-price-full-cut" v-for="(item,index) in goodsInfo.promotion" :key="index">{{item}}</span>
+                <span
+                  class="item-price-full-cut"
+                  v-for="(item,index) in goodsInfo.promotion"
+                  :key="index"
+                >{{item}}</span>
               </p>
             </div>
           </div>
@@ -58,9 +73,15 @@
           </div>
           <div class="item-select-column">
             <div class="item-select-row" v-for="(items, index) in goodsInfo.setMeal" :key="index">
-              <div class="item-select-box" v-for="(item, index1) in items" :key="index1" @click="select(index, index1)" :class="{'item-select-box-active': ((index * 3) + index1) === selectBoxIndex}">
+              <div
+                class="item-select-box"
+                v-for="(item, index1) in items"
+                :key="index1"
+                @click="select(index, index1)"
+                :class="{'item-select-box-active': ((index * 3) + index1) === selectBoxIndex}"
+              >
                 <div class="item-select-img">
-                  <img :src="item.img" alt="">
+                  <img :src="item.img" alt />
                 </div>
                 <div class="item-select-intro">
                   <p>{{item.intro}}</p>
@@ -82,7 +103,7 @@
             </div>
           </div>
         </div>
-        <br>
+        <br />
         <div class="add-buy-car-box">
           <div class="add-buy-car">
             <InputNumber :min="1" v-model="count" size="large"></InputNumber>
@@ -110,10 +131,10 @@ export default {
   computed: {
     ...mapState(['goodsInfo']),
     hirePurchase() {
-      const three = this.price * this.count / 3
-      const sex = this.price * this.count / 6
-      const twelve = this.price * this.count / 12 * 1.0025
-      const twentyFour = this.price * this.count / 24 * 1.005
+      const three = (this.price * this.count) / 3
+      const sex = (this.price * this.count) / 6
+      const twelve = ((this.price * this.count) / 12) * 1.0025
+      const twentyFour = ((this.price * this.count) / 24) * 1.005
       return [
         {
           tooltip: '无手续费',
@@ -159,7 +180,7 @@ export default {
         package: this.goodsInfo.setMeal[index1][index2]
       }
       this.addShoppingCart(data)
-      // this.$router.push('/shoppingCart')
+      this.$router.push('/shoppingCart')
     }
   },
   mounted() {

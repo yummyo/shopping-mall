@@ -5,11 +5,12 @@
     <div class="container">
       <div class="bread-crumb">
         <Breadcrumb>
-          <BreadcrumbItem gto="/" to="/">
-            <Icon type="ios-home-outline"></Icon> 首页
+          <BreadcrumbItem to="/">
+            <Icon type="ios-home-outline"></Icon>首页
           </BreadcrumbItem>
-          <BreadcrumbItem gto="/goodsList?sreachData=" to="/">
-            <Icon type="bag"></Icon> {{searchItem}}
+          <BreadcrumbItem to="/goodsList?sreachData=">
+            <Icon type="bag"></Icon>
+            {{searchItem}}
           </BreadcrumbItem>
         </Breadcrumb>
       </div>
@@ -24,7 +25,7 @@
           </div>
           <div class="item-as" v-for="(item,index) in asItems" :key="index">
             <div class="item-as-img">
-              <img :src="item.img" alt="">
+              <img :src="item.img" alt />
             </div>
             <div class="item-as-price">
               <span>
@@ -36,20 +37,28 @@
               <span>{{item.intro}}</span>
             </div>
             <div class="item-as-selled">
-              已有<span>{{item.num}}</span>人评价
+              已有
+              <span>{{item.num}}</span>人评价
             </div>
           </div>
         </div>
         <div class="goods-list-box">
           <div class="goods-list-tool">
             <ul>
-              <li v-for="(item,index) in goodsTool" :key="index" @click="orderBy(item.en, index)"><span :class="{ 'goods-list-tool-active': isAction[index]}">{{item.title}} <Icon :type="icon[index]"></Icon></span></li>
+              <li v-for="(item,index) in goodsTool" :key="index" @click="orderBy(item.en, index)">
+                <span :class="{ 'goods-list-tool-active': isAction[index]}">
+                  {{item.title}}
+                  <Icon :type="icon[index]"></Icon>
+                </span>
+              </li>
             </ul>
           </div>
           <div class="goods-list">
             <div class="goods-show-info" v-for="(item, index) in orderGoodsList" :key="index">
               <div class="goods-show-img">
-                <router-link gto="/goodsDetail" to="/"><img :src="item.img"/></router-link>
+                <router-link to="/goodsDetail">
+                  <img :src="item.img" />
+                </router-link>
               </div>
               <div class="goods-show-price">
                 <span>
@@ -61,7 +70,8 @@
                 <span>{{item.intro}}</span>
               </div>
               <div class="goods-show-num">
-                已有<span>{{item.remarks}}</span>人评价
+                已有
+                <span>{{item.remarks}}</span>人评价
               </div>
               <div class="goods-show-seller">
                 <span>{{item.shopName}}</span>
@@ -140,9 +150,9 @@ export default {
   min-width: 1000px;
 }
 .text-danger {
-  color: #A94442;
+  color: #a94442;
 }
-.seckill-price{
+.seckill-price {
   margin-right: 5px;
   font-size: 25px;
   font-weight: bold;
@@ -155,120 +165,118 @@ export default {
   width: 200px;
   border: 1px solid #ccc;
 }
-.item-as-title{
+.item-as-title {
   width: 100%;
   height: 36px;
-  color: #B1191A;
+  color: #b1191a;
   line-height: 36px;
   font-size: 18px;
 }
-.item-as-title span:first-child{
+.item-as-title span:first-child {
   margin-left: 20px;
 }
-.item-as-title span:last-child{
+.item-as-title span:last-child {
   float: right;
   margin-right: 15px;
   font-size: 10px;
   color: #ccc;
 }
-.item-as{
+.item-as {
   width: 160px;
   margin: 18px auto;
 }
-.item-as-img{
+.item-as-img {
   width: 160px;
   height: 160px;
   margin: 0px auto;
 }
-.item-as-price span{
+.item-as-price span {
   font-size: 18px;
 }
-.item-as-intro{
+.item-as-intro {
   margin-top: 5px;
   font-size: 12px;
 }
-.item-as-selled{
+.item-as-selled {
   margin-top: 5px;
   font-size: 12px;
 }
-.item-as-selled span{
-  color: #005AA0;
+.item-as-selled span {
+  color: #005aa0;
 }
 /* ---------------侧边广告栏结束------------------- */
-
 /* ---------------商品栏开始------------------- */
 .goods-list-box {
   margin-left: 15px;
   width: calc(100% - 215px);
 }
-.goods-list-tool{
+.goods-list-tool {
   width: 100%;
   height: 38px;
   border: 1px solid #ccc;
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
 }
-.goods-list-tool ul{
+.goods-list-tool ul {
   padding-left: 15px;
   list-style: none;
 }
-.goods-list-tool li{
+.goods-list-tool li {
   cursor: pointer;
   float: left;
 }
-.goods-list-tool span{
+.goods-list-tool span {
   padding: 5px 8px;
   border: 1px solid #ccc;
   border-left: none;
   line-height: 36px;
   background-color: #fff;
 }
-.goods-list-tool span:hover{
-  border: 1px solid #E4393C;
+.goods-list-tool span:hover {
+  border: 1px solid #e4393c;
 }
-.goods-list-tool i:hover{
-  color: #E4393C;
+.goods-list-tool i:hover {
+  color: #e4393c;
 }
 .goods-list-tool-active {
   color: #fff;
   border-left: 1px solid #ccc;
-  background-color: #E4393C !important;
+  background-color: #e4393c !important;
 }
-
 .goods-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.goods-show-info{
+.goods-show-info {
   width: 240px;
   padding: 10px;
   margin: 15px 0px;
   border: 1px solid #fff;
   cursor: pointer;
 }
-.goods-show-info:hover{
+.goods-show-info:hover {
   border: 1px solid #ccc;
   box-shadow: 0px 0px 15px #ccc;
 }
-.goods-show-price{
+.goods-show-price {
   margin-top: 6px;
 }
-.goods-show-detail{
+.goods-show-detail {
   font-size: 12px;
   margin: 6px 0px;
 }
-.goods-show-num{
+.goods-show-num {
   font-size: 12px;
   margin-bottom: 6px;
   color: #009688;
 }
-.goods-show-num span{
-  color: #005AA0;
+.goods-show-num span {
+  color: #005aa0;
   font-weight: bold;
 }
-.goods-show-seller{
+.goods-show-seller {
   font-size: 12px;
-  color:#E4393C;
+  color: #e4393c;
 }
 .goods-page {
   margin-top: 20px;

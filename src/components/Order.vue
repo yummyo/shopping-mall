@@ -8,13 +8,24 @@
         <Icon type="ios-lightbulb-outline" slot="icon"></Icon>
         <template slot="desc">请点击商品前的选择框，选择购物车中的商品，点击付款即可。</template>
       </Alert>
-      <Table border ref="selection" :columns="columns" :data="shoppingCart" size="large" @on-selection-change="select" no-data-text="您的购物车没有商品，请先添加商品到购物车再点击购买"></Table>
+      <Table
+        border
+        ref="selection"
+        :columns="columns"
+        :data="shoppingCart"
+        size="large"
+        @on-selection-change="select"
+        no-data-text="您的购物车没有商品，请先添加商品到购物车再点击购买"
+      ></Table>
       <div class="address-container">
         <h3>收货人信息</h3>
         <div class="address-box">
           <div class="address-check">
             <div class="address-check-name">
-              <span><Icon type="ios-checkmark-outline"></Icon> {{checkAddress.name}}</span>
+              <span>
+                <Icon type="ios-checkmark-outline"></Icon>
+                {{checkAddress.name}}
+              </span>
             </div>
             <div class="address-detail">
               <p>{{checkAddress.address}}</p>
@@ -22,14 +33,14 @@
           </div>
           <Collapse>
             <Panel>
-                选择地址
-                <p slot="content">
-                  <RadioGroup vertical size="large" @on-change="changeAddress">
-                    <Radio :label="item.addressId" v-for="(item, index) in address" :key="index">
-                      <span>{{item.name}} {{item.province}} {{item.city}} {{item.address}} {{item.phone}} {{item.postalcode}}</span>
-                    </Radio>
-                  </RadioGroup>
-                </p>
+              选择地址
+              <p slot="content">
+                <RadioGroup vertical size="large" @on-change="changeAddress">
+                  <Radio :label="item.addressId" v-for="(item, index) in address" :key="index">
+                    <span>{{item.name}} {{item.province}} {{item.city}} {{item.address}} {{item.phone}} {{item.postalcode}}</span>
+                  </Radio>
+                </RadioGroup>
+              </p>
             </Panel>
           </Collapse>
         </div>
@@ -38,15 +49,23 @@
         <h3>备注</h3>
         <i-input v-model="remarks" size="large" placeholder="在这里填写备注信息" class="remarks-input"></i-input>
       </div>
-      <div class="invoices-container">
+      <!-- <div class="invoices-container">
         <h3>发票信息</h3>
         <p>该商品不支持开发票</p>
-      </div>
+      </div>-->
       <div class="pay-container">
         <div class="pay-box">
-          <p><span>提交订单应付总额：</span> <span class="money"><Icon type="social-yen"></Icon> {{totalPrice.toFixed(2)}}</span></p>
+          <p>
+            <span>提交订单应付总额：</span>
+            <span class="money">
+              <Icon type="social-yen"></Icon>
+              {{totalPrice.toFixed(2)}}
+            </span>
+          </p>
           <div class="pay-btn">
-            <router-link gto="/pay" to="/"><Button type="error" size="large">支付订单</Button></router-link>
+            <router-link gto="/pay" to="/">
+              <Button type="error" size="large">支付订单</Button>
+            </router-link>
           </div>
         </div>
       </div>
@@ -211,7 +230,7 @@ export default {
 .remarks-input {
   margin-top: 15px;
 }
-.invoices-container p{
+.invoices-container p {
   font-size: 12px;
   line-height: 30px;
   color: #999;
