@@ -12,7 +12,8 @@ module.exports = {
   globals: {
     laydate: true,
     AMap: true,
-    BMap: true
+    BMap: true,
+    $: true
   },
   extends: 'eslint:recommended',
   // required to lint *.vue files
@@ -272,4 +273,4 @@ module.exports = {
     ],
     'array-bracket-spacing': [2, 'never']
   }
-};
+}
